@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar'
 
 const Home = () => {
   return (
-    <div>
+    <div className='relative w-screen h-screen overflow-hidden bg-gray-100'>
         <Navbar></Navbar>
         <Map></Map>
         <Sidebar></Sidebar>
