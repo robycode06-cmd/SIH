@@ -3,16 +3,11 @@ import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="navbar-left">
-        <div className="logo-container">
-          <span className="logo-icon">🔥</span>
-        </div>
-        <div className="title-container">
-          <h1 className="org-name">Name of Organization</h1>
-          <p className="system-name">Fire Information of Resource Management System</p>
-        </div>
-      </div>
+    <div className='absolute inset-0'>
+      
+    </div>
+  )
+}
 
       <div className="navbar-right">
         <div className="search-container">
