@@ -35,6 +35,11 @@ map.on("style.load", () => {
 // Zoom buttons
 map.addControl(new maplibregl.NavigationControl());
 
+// Add marker at midpoint of India
+new maplibregl.Marker({ color: "red" })
+  .setLngLat([78.9629, 20.5937])
+  .addTo(map);
+
 return () => {
   map.remove();
 };
