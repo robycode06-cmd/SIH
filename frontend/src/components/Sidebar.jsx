@@ -1,18 +1,25 @@
-import React from 'react'
 
-const Sidebar = () => {
+const Sidebar = ({setFirePannel}) => {
+  
+
   return (
     <div>
-      <div className='fixed bottom-2 right-2 md:top-20 md:right-4 w-95/100 md:w-3/10 max-h-screen md:max-h-[80vh] bg-white border border-gray-300 rounded-xl p-4 md:p-6 shadow-md overflow-y-auto'>
+      <div className='bg-white border border-gray-300 rounded-xl p-4 md:h-90 md:p-6 shadow-md'>
         
         <h1 className='text-lg md:text-xl font-semibold text-gray-800 mb-4 pb-3 border-b flex justify-between items-center'>Fire Info Panel
           <div className='w-5 md:w-7 shadow flex justify-center items-center bg-slate-50 rounded-full cursor-pointer hover:bg-slate-100'>
             <img 
+              onClick={()=>{
+                setFirePannel(false)
+              }}
               className='w-6 hidden md:w-5 md:block py-1'
               src="https://www.svgrepo.com/show/486072/system-arrow-right-line.svg" 
               alt="Close" 
             />
             <img
+              onClick={()=>{
+                setFirePannel(false)
+              }}
               className='w-5 p-1 md:opacity-0 md:hidden' 
               src="https://cdn-icons-png.flaticon.com/256/32/32195.png" 
               alt="Close" 
