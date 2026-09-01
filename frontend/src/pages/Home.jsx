@@ -2,8 +2,9 @@ import React, { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Map from '../components/Map'
 import Sidebar from '../components/Sidebar'
-import { useGSAP } from '@gsap/react'
+
 import gsap from 'gsap'
+import { useGSAP } from '@gsap/react';
 
 const Home = () => {
   const [firePannel, setFirePannel] = useState(false)

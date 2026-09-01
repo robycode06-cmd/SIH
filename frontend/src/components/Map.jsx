@@ -33,36 +33,30 @@ const Map = ({setFirePannel}) => {
     });
 
     // Zoom buttons
-    map.addControl(new maplibregl.NavigationControl());
+    map.addControl(new maplibregl.NavigationControl(),
+    "top-left"
+  );
 
     // Add marker at midpoint of India
-    new maplibregl.Marker({ color: "red" })
+    const markerEl = new maplibregl.Marker({ color: "red" })
       .setLngLat([78.9629, 20.5937])
       .addTo(map)
-      .getElement()
-      .addEventListener("click", () => {
-        setFirePannel(true)
-      });
+      .getElement();
+
+    markerEl.style.cursor = "pointer";
+    markerEl.addEventListener("click", () => {
+      setFirePannel(true);
+    });
 
     return () => {
       map.remove();
     };
-
-
   }, []);
-
-
 
   return (
     <div
       ref={mapContainer}
-      style={{
-        width: "100%",
-        height: "100vh"
-    }}
-    // onClick={()=>{
-    //   setFirePannel(true)
-    // }}
+      className="w-full h-screen [&_.maplibregl-ctrl-top-left]:mt-[75px] [&_.maplibregl-canvas-container]:cursor-default [&_.maplibregl-marker]:cursor-pointer"
     />
   );
 };
