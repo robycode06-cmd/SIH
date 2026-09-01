@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
@@ -7,11 +8,11 @@ const Navbar = () => {
     <div className='absolute inset-x-0 top-0 z-50 pointer-events-none'>
       <nav className="h-15 flex justify-between items-center bg-gradient-to-r from-[#ff3b30] to-[#ff7336] py-2 px-4 text-white font-sans shadow-[0_2px_4px_rgba(0,0,0,0.1)] pointer-events-auto">
         {/* Brand Name: Hidden on mobile when search is expanded */}
-        <p className={`text-white text-base sm:text-lg md:text-xl font-semibold truncate transition-all duration-200 ${
+        <Link to="/" className={`text-white text-base sm:text-lg md:text-xl font-semibold truncate transition-all duration-200 ${
           isSearchExpanded ? 'hidden sm:block' : 'block'
         }`}>
           Name of the Organization
-        </p>
+        </Link>
 
         {/* Right side container / search wrapper */}
         <div className={`flex items-center gap-2 sm:gap-4 ml-auto ${
@@ -96,7 +97,7 @@ const Navbar = () => {
           )}
 
           {/* Info Button: Hidden on mobile when search is expanded */}
-          <button className={`bg-transparent border-none text-black cursor-pointer flex items-center p-0 hover:opacity-80 transition-all ${
+          <Link to='/about-us' className={`bg-transparent border-none text-black cursor-pointer flex items-center p-0 hover:opacity-80 transition-all ${
             isSearchExpanded ? 'hidden sm:flex' : 'flex'
           }`} aria-label="Information">
             <svg 
@@ -113,7 +114,8 @@ const Navbar = () => {
               <line x1="12" y1="16" x2="12" y2="12"></line>
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
-          </button>
+            
+          </Link>
         </div>
       </nav>
     </div>
